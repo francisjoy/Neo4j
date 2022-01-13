@@ -1,0 +1,28 @@
+   app:
+     name: Neo4j
+     code: Neo4j
+     notify: fjoy@ecloudcontrol.com
+
+   build:
+     version: 4.1
+     env: DEV
+     build_file: none
+     output_files: output/*.zip
+     image_template: neo4j-4.1
+
+   deploy:
+     context: francisjoy/DEV
+     type: statefulset
+     replicas: 1
+     port:
+       - 7474 
+       - 7687
+
+   volumes:
+   - claim: neo4j-data
+     mount: /appz/data
+     name: data
+     size: 5Gi
+      
+   properties:
+     revision : 1
