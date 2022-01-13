@@ -16,7 +16,7 @@
      replicas: 1
      port:
        - 7474 
-       - 7687
+     targetPort: 7687
 
    volumes:
    - claim: neo4j-data
