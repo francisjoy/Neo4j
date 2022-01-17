@@ -15,8 +15,8 @@
      type: statefulset
      replicas: 1
      port:
-       - 7474 
-       - 7687
+       - 7687 
+       - 7474
 
    volumes:
    - claim: neo4j-data
